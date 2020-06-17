@@ -1,0 +1,30 @@
+# Cálculo do Imposto de Renda
+
+funcao baseDeCalculo(rendimento) {
+	
+	se(rendimento <= 22847,76){
+		retorne 0;
+	}
+	senao se(rendimento >= 22847,77 E rendimento <= 33919,80){
+		
+		retorne (rendimento * 0,075) - 1713,58;
+	}
+	senao se(rendimentoAnual >= 33919,81 E rendimento <= 45012,60){
+		
+		retorne (rendimento * 0,15) - 4257,57;
+	}
+	senao se(rendimentoAnual >= 45012,61 E rendimento <= 55976,16){
+		
+		retorne (rendimento * 0,225) - 7633,51;
+	}
+	
+	retorne (rendimento * 0,275) - 10432,32;	
+}
+
+
+public void deducao(rendimentoAnual, despesasDedutiveis, despesasDependentes){
+	
+	var rendimento = rendimentoAnual - despesasDedutiveis - despesasDependentes;
+	var valorBaseCalculo = baseDeCalculo(rendimento);
+	
+}
